@@ -13,4 +13,8 @@ def create_app():
     def pets(): 
         return 'These are our pets available for adoption!'
 
+    #register pet blueprint
+    from . import pet
+    app.register_blueprint(pet.bp)
+
     return app
