@@ -8,13 +8,11 @@ def create_app():
     def index():
         return "Hello, this is PetFax"
 
-    # pets index route
-    @app.route('/pets')
-    def pets(): 
-        return 'These are our pets available for adoption!'
-
     #register pet blueprint
     from . import pet
     app.register_blueprint(pet.bp)
+    
+    from . import fact
+    app.register_blueprint(fact.bp)
 
     return app
